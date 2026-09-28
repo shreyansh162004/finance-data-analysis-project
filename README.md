@@ -2,7 +2,7 @@
 
 A complete data analysis project on financial transaction data. Raw data is first **cleaned and validated using Excel, SQL and Python (Pandas)**, then analyzed and turned into interactive executive dashboards in **Power BI** with dynamic metric switching, Year-over-Year (YoY) analysis, dynamic visual headers and drill-through operational reporting.
 
-![Dashboard Preview](images/dashboard-overview.png)
+![Dashboard Preview](Images/dashboard-overview.png)
 
 **Data flow:** Raw CSV → Excel (inspection) → SQL (validation & analysis) → Python/Pandas (cleaning & EDA) → Power Query → Power BI (model, DAX, dashboards)
 
@@ -408,7 +408,7 @@ SWITCH(
 
 ### Drill-Through Transactions Page
 
-![Drill Through](images/drill-through.png)
+![Drill Through](Images/drill-through.png)
 
 ---
 
