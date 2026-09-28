@@ -404,7 +404,7 @@ SWITCH(
 
 ### Overview Page
 
-![Overview](images/dashboard-overview.png)
+![Overview](Images/dashboard-overview.png)
 
 ### Drill-Through Transactions Page
 
