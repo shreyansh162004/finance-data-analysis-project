@@ -9,6 +9,7 @@ A complete data analysis project on financial transaction data. Raw data is firs
 ---
 
 ## 📑 Table of Contents
+
 - [Project Overview](#-project-overview)
 - [Business Requirements](#-business-requirements)
 - [KPI Requirements](#-kpi-requirements)
@@ -45,6 +46,7 @@ This project covers the **full analytics cycle**: understanding the data, cleani
 A financial organization wants an interactive **Finance Analytics Dashboard in Power BI** to monitor and analyze overall financial transactions, customer behavior, fees, taxes and transaction performance across different business segments and regions.
 
 ### Challenges faced by management
+
 The management team struggles to track:
 
 - Overall transaction growth and financial performance
@@ -57,6 +59,7 @@ The management team struggles to track:
 - Year-over-Year (YoY) performance changes
 
 ### Objective
+
 Provide a centralized analytical solution that helps stakeholders:
 
 - Monitor KPIs in real time
@@ -67,6 +70,7 @@ Provide a centralized analytical solution that helps stakeholders:
 - Improve financial decision-making and business strategy
 
 ### Dynamic filters
+
 Users can filter the data dynamically by:
 
 - **Year**
@@ -78,45 +82,46 @@ Users can filter the data dynamically by:
 
 ## 📈 KPI Requirements
 
-| # | KPI | Description |
-|---|---|---|
-| 1 | **Total Amount** | Total transaction amount processed, with YoY growth comparison |
-| 2 | **Total Transactions** | Total number of transactions, tracking yearly volume changes |
-| 3 | **Average Transaction Value** | Average amount per transaction |
-| 4 | **Total Fees** | Total fees collected from transactions |
-| 5 | **Total Tax** | Total tax generated from all transactions |
+| #   | KPI                           | Description                                                    |
+| --- | ----------------------------- | -------------------------------------------------------------- |
+| 1   | **Total Amount**              | Total transaction amount processed, with YoY growth comparison |
+| 2   | **Total Transactions**        | Total number of transactions, tracking yearly volume changes   |
+| 3   | **Average Transaction Value** | Average amount per transaction                                 |
+| 4   | **Total Fees**                | Total fees collected from transactions                         |
+| 5   | **Total Tax**                 | Total tax generated from all transactions                      |
 
 ---
 
 ## 📊 Chart Requirements
 
-| # | Chart | Type | Objective |
-|---|---|---|---|
-| 1 | **Total Amount by Month** | Line / Area Chart | Analyze monthly transaction trends and identify seasonal spikes or drops |
-| 2 | **Total Amount by Transaction Status** | Donut Chart | Compare Success, Failed and Pending amounts to measure operational efficiency and success rate |
-| 3 | **Total Amount by Customer Segment** | Horizontal Bar Chart | Analyze contribution of Retail, Premium, SME, Corporate and Wealth segments to find the most valuable groups |
-| 4 | **Total Amount by State** | Horizontal Bar Chart | Compare state-wise amounts to identify top-performing regions |
-| 5 | **Transaction Type Analysis** | Matrix / Heatmap Table | Show Amount, Fees, Tax and Transaction Count by type to understand profitability by category |
-| 6 | **Total Amount by Gender** | Donut Chart | Analyze Male vs. Female contribution to understand demographic participation |
+| #   | Chart                                  | Type                   | Objective                                                                                                    |
+| --- | -------------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------ |
+| 1   | **Total Amount by Month**              | Line / Area Chart      | Analyze monthly transaction trends and identify seasonal spikes or drops                                     |
+| 2   | **Total Amount by Transaction Status** | Donut Chart            | Compare Success, Failed and Pending amounts to measure operational efficiency and success rate               |
+| 3   | **Total Amount by Customer Segment**   | Horizontal Bar Chart   | Analyze contribution of Retail, Premium, SME, Corporate and Wealth segments to find the most valuable groups |
+| 4   | **Total Amount by State**              | Horizontal Bar Chart   | Compare state-wise amounts to identify top-performing regions                                                |
+| 5   | **Transaction Type Analysis**          | Matrix / Heatmap Table | Show Amount, Fees, Tax and Transaction Count by type to understand profitability by category                 |
+| 6   | **Total Amount by Gender**             | Donut Chart            | Analyze Male vs. Female contribution to understand demographic participation                                 |
 
 **Transaction types covered:** Bill Payment, Card Payment, Deposit, Fee Charge, Interest Credit, Investment, Loan EMI, Refund, Transfer, Withdrawal.
 
 ### Dashboard 2: Detailed Grid View & Drill-Down
+
 A detailed grid view with drill-down to the underlying transaction records, so users can inspect and export row-level data behind any chart.
 
 ---
 
 ## 🔄 Data Analysis Workflow
 
-| Step | Phase | Tools | What was done |
-|---|---|---|---|
-| 1 | **Data Understanding** | Excel | Opened the raw file, reviewed columns, data types, ranges and value lists |
-| 2 | **Data Cleaning** | Excel, SQL, Python | Removed duplicates, fixed data types and dates, standardized text, handled missing values |
-| 3 | **Data Validation** | SQL, Python | Checked business rules (for example tax vs. fees, invalid amounts, valid status values) |
-| 4 | **Exploratory Analysis** | SQL, Python | Explored trends, segments, regions and transaction types before building visuals |
-| 5 | **Data Modeling** | Power Query, Power BI | Loaded cleaned data, built a star schema and a date table |
-| 6 | **Measures & Dashboards** | DAX, Power BI | Built KPIs, YoY measures, Field Parameters and two dashboards |
-| 7 | **Insights** | Power BI | Interpreted the results into business insights |
+| Step | Phase                     | Tools                 | What was done                                                                             |
+| ---- | ------------------------- | --------------------- | ----------------------------------------------------------------------------------------- |
+| 1    | **Data Understanding**    | Excel                 | Opened the raw file, reviewed columns, data types, ranges and value lists                 |
+| 2    | **Data Cleaning**         | Excel, SQL, Python    | Removed duplicates, fixed data types and dates, standardized text, handled missing values |
+| 3    | **Data Validation**       | SQL, Python           | Checked business rules (for example tax vs. fees, invalid amounts, valid status values)   |
+| 4    | **Exploratory Analysis**  | SQL, Python           | Explored trends, segments, regions and transaction types before building visuals          |
+| 5    | **Data Modeling**         | Power Query, Power BI | Loaded cleaned data, built a star schema and a date table                                 |
+| 6    | **Measures & Dashboards** | DAX, Power BI         | Built KPIs, YoY measures, Field Parameters and two dashboards                             |
+| 7    | **Insights**              | Power BI              | Interpreted the results into business insights                                            |
 
 ---
 
@@ -128,6 +133,7 @@ Raw data was cleaned **before** analysis so that every number on the dashboard c
 **Source:** [dataset source, e.g. Kaggle link or provided in tutorial]
 
 ### 1️⃣ Excel: first inspection
+
 - Reviewed columns, data types and value ranges
 - Used **Remove Duplicates** on `transaction_id`
 - Used **TRIM / PROPER** to fix extra spaces and inconsistent text
@@ -135,6 +141,7 @@ Raw data was cleaned **before** analysis so that every number on the dashboard c
 - Checked that dates were in one consistent format
 
 ### 2️⃣ SQL: validation and cleaning queries
+
 ```sql
 -- Duplicate transaction IDs
 SELECT transaction_id, COUNT(*) AS cnt
@@ -165,6 +172,7 @@ SET transaction_status = TRIM(transaction_status),
 ```
 
 ### 3️⃣ Python (Pandas): cleaning and validation
+
 ```python
 import pandas as pd
 
@@ -201,15 +209,15 @@ df.to_csv("data/cleaned/finance_transaction_cleaned.csv", index=False)
 
 ### 4️⃣ Cleaning summary
 
-| Check | Method | Outcome |
-|---|---|---|
-| Duplicate transactions | Excel, SQL, Pandas | [rows removed] |
-| Missing values | SQL, Pandas | [what was handled] |
-| Date format and type | Excel, Pandas | Converted to a proper date type |
-| Text inconsistencies | Excel, SQL, Pandas | Trimmed and standardized |
-| Invalid amounts | SQL, Pandas | [rows reviewed or removed] |
-| Tax vs. fees rule | Pandas | Tax equals 18% of fees |
-| **Rows before / after** | | [raw rows] → [cleaned rows] |
+| Check                   | Method             | Outcome                         |
+| ----------------------- | ------------------ | ------------------------------- |
+| Duplicate transactions  | Excel, SQL, Pandas | [rows removed]                  |
+| Missing values          | SQL, Pandas        | [what was handled]              |
+| Date format and type    | Excel, Pandas      | Converted to a proper date type |
+| Text inconsistencies    | Excel, SQL, Pandas | Trimmed and standardized        |
+| Invalid amounts         | SQL, Pandas        | [rows reviewed or removed]      |
+| Tax vs. fees rule       | Pandas             | Tax equals 18% of fees          |
+| **Rows before / after** |                    | [raw rows] → [cleaned rows]     |
 
 The cleaned file was then loaded into Power BI through **Power Query**.
 
@@ -287,11 +295,11 @@ print(df["transaction_status"].value_counts(normalize=True) * 100)
 
 The model follows a **Star Schema** for fast DAX queries and reliable time intelligence:
 
-| Table | Type | Purpose |
-|---|---|---|
-| `finance_transaction` | Fact | `transaction_id`, `transaction_date`, `customer_name`, `transaction_type`, `transaction_status`, `gender`, `customer_segment`, `state`, `city`, `occupation`, `merchant_category`, `amount`, `fee_amount`, `tax_amount` |
-| `calendar_table` | Dimension | Continuous dates, year, month name and `month_number` for correct Jan–Dec sorting |
-| `Dynamic Metric` | Parameter | Field Parameter table used to switch metrics dynamically |
+| Table                 | Type      | Purpose                                                                                                                                                                                                                 |
+| --------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `finance_transaction` | Fact      | `transaction_id`, `transaction_date`, `customer_name`, `transaction_type`, `transaction_status`, `gender`, `customer_segment`, `state`, `city`, `occupation`, `merchant_category`, `amount`, `fee_amount`, `tax_amount` |
+| `calendar_table`      | Dimension | Continuous dates, year, month name and `month_number` for correct Jan–Dec sorting                                                                                                                                       |
+| `Dynamic Metric`      | Parameter | Field Parameter table used to switch metrics dynamically                                                                                                                                                                |
 
 **Relationship:** `calendar_table[date]` → `finance_transaction[transaction_date]` (one-to-many). `calendar_table` is marked as the Date Table.
 
@@ -300,12 +308,14 @@ The model follows a **Star Schema** for fast DAX queries and reliable time intel
 ## 🧮 DAX Calculations & Formulas
 
 ### 1. Total Transactions
+
 ```dax
 total transactions =
 DISTINCTCOUNT('finance_transaction'[transaction_id])
 ```
 
 ### 2. Previous Year Transactions
+
 ```dax
 previous year transaction =
 CALCULATE(
@@ -315,6 +325,7 @@ CALCULATE(
 ```
 
 ### 3. YoY Transaction Growth %
+
 ```dax
 year on year transactions % =
 DIVIDE(
@@ -325,30 +336,35 @@ DIVIDE(
 ```
 
 ### 4. Average Transaction Value
+
 ```dax
 average transaction value =
 AVERAGE('finance_transaction'[amount])
 ```
 
 ### 5. Total Fees
+
 ```dax
 total fee =
 SUM('finance_transaction'[fee_amount])
 ```
 
 ### 6. Total Tax
+
 ```dax
 total tax =
 SUM('finance_transaction'[tax_amount])
 ```
 
 ### 7. Month Number (for sorting)
+
 ```dax
 month number =
 MONTH('calendar_table'[date])
 ```
 
 ### 8. Dynamic Title Context
+
 ```dax
 dynamic item =
 SWITCH(
@@ -366,6 +382,7 @@ SWITCH(
 ## 🖥️ Dashboard Layout & Visualizations
 
 ### Dashboard 1: Overview Analysis
+
 - **Filters:** Year, Dynamic Measure, Occupation, Category
 - **KPI Cards:** Total Amount, Total Transactions, Average Transaction Value, Total Fees, Total Tax, each with YoY variance and vs. previous year
 - **Dynamic Trend (Area Chart):** Monthly trend driven by the metric dropdown
@@ -376,6 +393,7 @@ SWITCH(
 - **Gender Split (Donut Chart):** Male vs. Female contribution
 
 ### Dashboard 2: Detailed Grid View & Drill-Down (Operational Transactions)
+
 - Line-item table with `transaction_date`, `transaction_id`, `Customer name`, `transaction_status`, `transaction_type`, `gender`, `customer_segment`, `state`, Total Amount, Total fees and Total tax
 - Year selector and Dynamic Measure dropdown, with the same KPI cards on top
 - Drill-through enabled for quick inspection, with data export
@@ -385,9 +403,11 @@ SWITCH(
 ## 📸 Screenshots
 
 ### Overview Page
+
 ![Overview](images/dashboard-overview.png)
 
 ### Drill-Through Transactions Page
+
 ![Drill Through](images/drill-through.png)
 
 ---
@@ -403,13 +423,13 @@ SWITCH(
 
 ## 🛠️ Tech Stack & Tools Used
 
-| Category | Tools |
-|---|---|
-| Data Cleaning | **Excel**, **SQL**, **Python (Pandas)** |
-| Analysis | **SQL**, **Python (Pandas)** |
-| ETL | **Power Query (M)** |
-| Visualization & Modeling | **Power BI Desktop**, **DAX** |
-| Version Control | **Git & GitHub** |
+| Category                 | Tools                                   |
+| ------------------------ | --------------------------------------- |
+| Data Cleaning            | **Excel**, **SQL**, **Python (Pandas)** |
+| Analysis                 | **SQL**, **Python (Pandas)**            |
+| ETL                      | **Power Query (M)**                     |
+| Visualization & Modeling | **Power BI Desktop**, **DAX**           |
+| Version Control          | **Git & GitHub**                        |
 
 ---
 
@@ -461,10 +481,6 @@ finance-data-analysis-project/
 **Shreyansh Burman**
 Aspiring Data Analyst | B.Tech CSE (Computer Science & Design), GGITS Jabalpur
 
-- 💼 LinkedIn: [your LinkedIn link]
-- 🐙 GitHub: [your GitHub link]
-- 📧 Email: [your email]
+- 📧 Email: [shreyanshburman10@gmail.com]
 
 ⭐ If you found this project useful, please give it a star!
-#   f i n a n c e - d a t a - a n a l y s i s - p r o j e c t  
- 
